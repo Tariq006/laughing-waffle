@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 253, 251, 247;
+  --background-end-rgb: 253, 251, 247;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-golf-green text-golf-cream px-6 py-3 rounded-md transition-all duration-300 hover:bg-golf-green-light border border-golf-gold hover:scale-105 active:scale-95;
+  }
+  .btn-gold {
+    @apply bg-golf-gold text-golf-green px-6 py-3 rounded-md transition-all duration-300 hover:bg-golf-gold-light border border-golf-green hover:scale-105 active:scale-95 font-semibold;
+  }
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl text-golf-green mb-6;
+  }
+  .section-subtitle {
+    @apply font-sans text-golf-earth uppercase tracking-widest text-sm mb-4;
+  }
+}
