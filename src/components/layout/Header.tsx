@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -42,21 +41,28 @@ export default function Header() {
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled
           ? "bg-golf-green/90 backdrop-blur-md py-3 shadow-lg"
-          : "bg-golf-green py-6"
+          : "bg-golf-green py-4 md:py-6"
       )}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          {/* Logo Image - replace with your actual logo */}
-          <div className="relative h-12 w-auto">
-            <Image
-              src="/GOLF-LOGO.png"
-              alt="ABEORUTA GOLF CLUB Logo"
-              width={200} // Adjust based on your logo dimensions
-              height={48}
-              className="object-contain h-full w-auto"
-              priority
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+        <Link href="/" className="flex items-center gap-2 md:gap-4">
+          {/* Logo Image */}
+          <div className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center flex-shrink-0">
+            <img
+              src="./GOLF-LOGO.png"
+              alt="ABEOKUTA GOLF CLUB Logo"
+              className="h-full w-auto object-contain"
             />
+          </div>
+          
+          {/* ABEOKUTA GOLF CLUB Text - Optimized for mobile */}
+          <div className="flex flex-col min-w-0"> {/* Added min-w-0 to prevent overflow issues */}
+            <h1 className="font-serif text-sm md:text-2xl font-bold text-white tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+              ABEOKUTA GOLF CLUB
+            </h1>
+            <p className="text-xs md:text-sm text-golf-gold italic whitespace-nowrap">
+              Established 1987
+            </p>
           </div>
         </Link>
 
@@ -98,10 +104,10 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white ml-2 flex-shrink-0" /* Added ml-2 and flex-shrink-0 */
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -114,7 +120,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-golf-green border-t border-golf-green-light"
           >
-            <div className="container mx-auto px-6 py-8 flex flex-col space-y-6">
+            <div className="container mx-auto px-4 py-6 flex flex-col space-y-4">
               {navItems.map((item) => {
                 if (item.external) {
                   return (
@@ -125,7 +131,7 @@ export default function Header() {
                       rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        "text-lg font-medium transition-colors hover:text-golf-gold",
+                        "text-base font-medium transition-colors hover:text-golf-gold py-2",
                         pathname === item.href ? "text-golf-gold" : "text-white"
                       )}
                     >
@@ -139,7 +145,7 @@ export default function Header() {
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "text-lg font-medium transition-colors hover:text-golf-gold",
+                      "text-base font-medium transition-colors hover:text-golf-gold py-2",
                       pathname === item.href ? "text-golf-gold" : "text-white"
                     )}
                   >
