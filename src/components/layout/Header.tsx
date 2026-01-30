@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image"; // Add this import
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Import the logo directly
+import logo from "./GOLF-LOGO.png"; // IMPORTANT: Import the logo
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -50,12 +53,12 @@ export default function Header() {
           {/* Logo Image */}
           <div className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center flex-shrink-0 relative">
             <Image
-              src="/GOLF-LOGO.png"  // Make sure the file is in public folder
+              src={logo}  // Use the imported logo
               alt="ABEOKUTA GOLF CLUB Logo"
               width={48}
               height={48}
               className="h-full w-auto object-contain"
-              priority // Important for logo
+              priority
             />
           </div>
           
