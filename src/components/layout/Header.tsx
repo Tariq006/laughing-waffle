@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image"; // Add this import
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
@@ -47,16 +48,19 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 md:gap-4">
           {/* Logo Image */}
-          <div className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center flex-shrink-0">
-            <img
-              src="./GOLF-LOGO.png"
+          <div className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center flex-shrink-0 relative">
+            <Image
+              src="/GOLF-LOGO.png"  // Make sure the file is in public folder
               alt="ABEOKUTA GOLF CLUB Logo"
+              width={48}
+              height={48}
               className="h-full w-auto object-contain"
+              priority // Important for logo
             />
           </div>
           
-          {/* ABEOKUTA GOLF CLUB Text - Optimized for mobile */}
-          <div className="flex flex-col min-w-0"> {/* Added min-w-0 to prevent overflow issues */}
+          {/* ABEOKUTA GOLF CLUB Text */}
+          <div className="flex flex-col min-w-0">
             <h1 className="font-serif text-sm md:text-2xl font-bold text-white tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
               ABEOKUTA GOLF CLUB
             </h1>
@@ -104,7 +108,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white ml-2 flex-shrink-0" /* Added ml-2 and flex-shrink-0 */
+          className="md:hidden text-white ml-2 flex-shrink-0"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
