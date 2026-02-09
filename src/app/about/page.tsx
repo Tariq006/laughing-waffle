@@ -130,7 +130,7 @@ export default function About() {
                 <div className="space-y-6 mt-8">
                   <h4 className="font-serif text-3xl text-golf-green">Safety & Security</h4>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    Beyond the sport, Abeokuta Golf Club places a strong emphasis on the safety and security of its members, guests, and property. Robust security measures are consistently maintained to ensure a safe and secure environment at all times. This commitment to safety further reinforces the club's reputation as a well-managed and member-focused institution.
+                    Beyond the sport, Abeokuta Golf Club places a strong emphasis on the safety and security of its members, guests, and property. Robust security measures are consistently maintained to ensure a safe and secure environment at all times. This commitment to safety further reinforces the club&apos;s reputation as a well-managed and member-focused institution.
                   </p>
 
                   <h4 className="font-serif text-3xl text-golf-green mt-8">Club House Excellence</h4>
