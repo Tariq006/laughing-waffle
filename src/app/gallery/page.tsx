@@ -6,8 +6,8 @@ import { useState } from "react";
 import { Play, X, Trophy, Calendar, User, Instagram, Facebook } from "lucide-react";
 
 const photos = [
-  { id: 1, category: "Tournaments", src: "https://images.unsplash.com/photo-1594142465967-360ee07e2a9b?q=80&w=2070&auto=format&fit=crop", title: "Governor's Cup 2024" },
-  { id: 2, category: "Social Events", src: "https://images.unsplash.com/photo-1565492290150-516d56d10c05?q=80&w=2070&auto=format&fit=crop", title: "New Year's Eve Gala" },
+  { id: 1, category: "Tournaments", src: "https://images.unsplash.com/photo-1594142465967-360ee07e2a9b?q=80&w=2070&auto=format&fit=crop", title: "Governor&apos;s Cup 2024" },
+  { id: 2, category: "Social Events", src: "https://images.unsplash.com/photo-1565492290150-516d56d10c05?q=80&w=2070&auto=format&fit=crop", title: "New Year&apos;s Eve Gala" },
   { id: 3, category: "Junior Golf", src: "https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?q=80&w=2070&auto=format&fit=crop", title: "Junior Summer Camp" },
   { id: 4, category: "Dining", src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop", title: "Champagne Brunch" },
   { id: 5, category: "Tournaments", src: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop", title: "Club Championship" },
@@ -70,7 +70,7 @@ export default function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-8">
                   <div className="text-white">
                     <p className="text-golf-gold text-sm font-bold uppercase tracking-widest mb-1">Champion</p>
-                    <p className="font-serif text-2xl">[Winner's Name Here]</p>
+                    <p className="font-serif text-2xl">[Winner&apos;s Name Here]</p>
                   </div>
                 </div>
               </motion.div>
@@ -119,7 +119,7 @@ export default function Gallery() {
                 </p>
 
                 <p className="text-golf-cream/80 text-lg leading-relaxed">
-                  Join us in congratulating our winner and all participants for making this tournament a memorable event in our club's history.
+                  Join us in congratulating our winner and all participants for making this tournament a memorable event in our club&apos;s history.
                 </p>
               </motion.div>
             </div>
