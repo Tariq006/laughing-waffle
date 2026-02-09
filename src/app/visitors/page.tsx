@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Calendar, CreditCard, Shirt, Utensils, Award, Star, ArrowRight } from "lucide-react";
+import { Calendar, Shirt, Utensils, Award, Star, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const dressCodeItems = [
@@ -76,7 +76,7 @@ export default function Visitors() {
         </div>
       </section>
 
-      {/* Visitor Info & Fees */}
+      {/* Visitor Info */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -90,24 +90,10 @@ export default function Visitors() {
               <div className="space-y-8">
                 <div className="flex items-start gap-6 p-6 bg-golf-cream rounded-xl">
                   <div className="p-3 bg-golf-green text-white rounded-lg">
-                    <CreditCard size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-xl text-golf-green mb-2">Green Fees</h4>
-                    <ul className="text-sm text-gray-600 space-y-2">
-                      <li className="flex justify-between w-64"><span>Weekday (18 Holes):</span> <span className="font-bold text-golf-green">₦25,000</span></li>
-                      <li className="flex justify-between w-64"><span>Weekend (18 Holes):</span> <span className="font-bold text-golf-green">₦35,000</span></li>
-                      <li className="flex justify-between w-64"><span>Club Rental:</span> <span className="font-bold text-golf-green">₦10,000</span></li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6 p-6 bg-golf-cream rounded-xl">
-                  <div className="p-3 bg-golf-green text-white rounded-lg">
                     <Shirt size={24} />
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl text-golf-green mb-2">Dress Code</h4>
+                    <h4 className="font-serif text-xl text-golf-green mb-4">Dress Code</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {dressCodeItems.map((item) => (
                         <div key={item.label} className="text-center sm:text-left">
@@ -116,6 +102,33 @@ export default function Visitors() {
                         </div>
                       ))}
                     </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-6 p-6 bg-golf-cream rounded-xl">
+                  <div className="p-3 bg-golf-green text-white rounded-lg">
+                    <Utensils size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-xl text-golf-green mb-2">Dining & Etiquette</h4>
+                    <ul className="text-sm text-gray-600 space-y-2">
+                      <li className="flex items-start gap-2">
+                        <span className="text-golf-gold">•</span>
+                        <span>Cell phones should be on silent in all club areas</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-golf-gold">•</span>
+                        <span>Respect the pace of play and allow faster groups to pass</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-golf-gold">•</span>
+                        <span>Proper golf attire is required in all clubhouse areas</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-golf-gold">•</span>
+                        <span>Replace divots, repair ball marks, and rake bunkers</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
