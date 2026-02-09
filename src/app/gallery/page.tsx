@@ -3,9 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { Play, X, Filter } from "lucide-react";
-
-const categories = ["All", "Tournaments", "Social Events", "Junior Golf", "Dining"];
+import { Play, X, Trophy, Calendar, User } from "lucide-react";
 
 const photos = [
   { id: 1, category: "Tournaments", src: "https://images.unsplash.com/photo-1594142465967-360ee07e2a9b?q=80&w=2070&auto=format&fit=crop", title: "Governor's Cup 2024" },
@@ -19,10 +17,7 @@ const photos = [
 ];
 
 export default function Gallery() {
-  const [filter, setFilter] = useState("All");
   const [selectedImage, setSelectedImage] = useState<null | typeof photos[0]>(null);
-
-  const filteredPhotos = filter === "All" ? photos : photos.filter(p => p.category === filter);
 
   return (
     <div className="pt-20">
@@ -47,30 +42,100 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Filterable Gallery */}
-      <section className="py-24 bg-white">
+      {/* February Tournament Winner Section */}
+      <section className="py-24 bg-golf-green text-golf-cream">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
-            <div>
-              <h2 className="section-subtitle">Visual Journey</h2>
-              <h3 className="section-title">Events Gallery</h3>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-golf-gold/20 rounded-full mb-4">
+                <Trophy className="text-golf-gold" size={32} />
+              </div>
+              <h2 className="section-subtitle !text-golf-gold">Latest Achievement</h2>
+              <h3 className="section-title !text-golf-cream">February Golf Tournament Winner</h3>
             </div>
 
-            <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setFilter(cat)}
-                  className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                    filter === cat
-                      ? "bg-golf-green text-white shadow-lg"
-                      : "bg-golf-cream text-golf-green hover:bg-golf-green/10"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1592910129840-25a162395e02?q=80&w=2070&auto=format&fit=crop"
+                  alt="February Tournament Winner"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-8">
+                  <div className="text-white">
+                    <p className="text-golf-gold text-sm font-bold uppercase tracking-widest mb-1">Champion</p>
+                    <p className="font-serif text-2xl">[Winner's Name Here]</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-8"
+              >
+                <div className="bg-golf-green-light p-8 rounded-xl border-l-4 border-golf-gold">
+                  <h4 className="font-serif text-2xl text-golf-cream mb-6">Tournament Highlights</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 bg-golf-gold/20 rounded-lg">
+                        <Calendar className="text-golf-gold" size={20} />
+                      </div>
+                      <div>
+                        <p className="text-golf-cream font-semibold">Event Date</p>
+                        <p className="text-golf-cream/70">February 15-17, 2024</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 bg-golf-gold/20 rounded-lg">
+                        <Trophy className="text-golf-gold" size={20} />
+                      </div>
+                      <div>
+                        <p className="text-golf-cream font-semibold">Final Score</p>
+                        <p className="text-golf-cream/70">-8 under par</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 bg-golf-gold/20 rounded-lg">
+                        <User className="text-golf-gold" size={20} />
+                      </div>
+                      <div>
+                        <p className="text-golf-cream font-semibold">Participants</p>
+                        <p className="text-golf-cream/70">48 golfers competed</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-golf-cream/80 text-lg leading-relaxed">
+                  The February Golf Tournament showcased exceptional skill and sportsmanship. Our champion displayed remarkable consistency throughout the competition, with a stunning final round that secured the victory.
+                </p>
+
+                <p className="text-golf-cream/80 text-lg leading-relaxed">
+                  Join us in congratulating our winner and all participants for making this tournament a memorable event in our club's history.
+                </p>
+              </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="section-subtitle">Visual Journey</h2>
+            <h3 className="section-title">Events Gallery</h3>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              Explore our collection of memorable moments from tournaments, social gatherings, and special events at Abeokuta Golf Club.
+            </p>
           </div>
 
           <motion.div
@@ -78,7 +143,7 @@ export default function Gallery() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             <AnimatePresence mode="popLayout">
-              {filteredPhotos.map((photo) => (
+              {photos.map((photo) => (
                 <motion.div
                   key={photo.id}
                   layout
