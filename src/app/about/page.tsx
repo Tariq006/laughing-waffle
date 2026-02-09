@@ -3,33 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const timelineEvents = [
-  {
-    year: "1987",
-    title: "The Foundation",
-    description: "A group of passionate golf enthusiasts gathered to establish the first premier golf club in Abeokuta, driven by a vision of creating a sanctuary for the sport.",
-    image: "https://images.unsplash.com/photo-1532444458054-015fddf2b2ca?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    year: "1992",
-    title: "Championship Expansion",
-    description: "The course was expanded to a full 18-hole championship layout, designed by world-renowned architects to challenge and inspire.",
-    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    year: "2005",
-    title: "Modern Clubhouse Unveiled",
-    description: "Our state-of-the-art clubhouse was opened, offering luxury amenities and becoming the social heart of the community.",
-    image: "https://images.unsplash.com/photo-1599423300746-b62533397364?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    year: "Today",
-    title: "Continuing the Legacy",
-    description: "Abeokuta Golf Club remains the pinnacle of excellence, hosting international tournaments and fostering a vibrant community of golfers.",
-    image: "https://images.unsplash.com/photo-1592910129840-25a162395e02?q=80&w=2070&auto=format&fit=crop",
-  },
-];
-
 const executives = [
   { name: "The Captain", position: "Engr Umar Olaseni Bakare" },
   { name: "Vice Captain", position: "Pastor Adediran Oladele" },
@@ -81,33 +54,100 @@ export default function About() {
         </div>
       </section>
 
-      {/* Vision & Mission */}
+      {/* Our Story Section - Updated with Document Content */}
       <section className="py-24 bg-golf-cream">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white p-12 rounded-lg shadow-xl border-t-4 border-golf-gold"
-            >
-              <h2 className="section-subtitle">Our Vision</h2>
-              <p className="font-serif text-2xl text-golf-green italic leading-relaxed">
-                &quot;To be the premier golfing destination in Africa, where tradition, nature, and excellence converge to create an unparalleled lifestyle experience.&quot;
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white p-12 rounded-lg shadow-xl border-t-4 border-golf-green"
-            >
-              <h2 className="section-subtitle">Our Mission</h2>
-              <p className="font-serif text-2xl text-golf-green italic leading-relaxed">
-                &quot;To provide our members and guests with a world-class golfing environment, exceptional facilities, and a warm community that honors the traditions of the game.&quot;
-              </p>
-            </motion.div>
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="text-center mb-16">
+            <h2 className="section-subtitle">Our Story</h2>
+            <h3 className="section-title">Established 1987</h3>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-2xl overflow-hidden"
+          >
+            <div className="relative h-80 w-full">
+              <Image
+                src="https://images.unsplash.com/photo-1532444458054-015fddf2b2ca?q=80&w=2070&auto=format&fit=crop"
+                alt="Abeokuta Golf Club Overview"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
+                <h4 className="text-white font-serif text-3xl">A Legacy of Excellence</h4>
+              </div>
+            </div>
+
+            <div className="p-12 space-y-8">
+              <div className="space-y-6">
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Abeokuta Golf Club was established in the year 1987 and has since grown into one of the most notable sporting and social institutions in Ogun State. The club is strategically located on an expansive land area of approximately 49 hectares, nestled in a serene and naturally appealing environment behind the Ogun State Government Secretariat, Abeokuta.
+                </p>
+                
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Its location offers members and visitors a peaceful escape from the bustle of city life, making it an ideal setting for leisure, recreation, and professional networking.
+                </p>
+
+                <div className="bg-golf-cream p-8 rounded-lg border-l-4 border-golf-gold">
+                  <h4 className="font-serif text-2xl text-golf-green mb-4">Our Membership Community</h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    The membership of Abeokuta Golf Club, which currently stands at about 180 members, cuts across diverse socio-economic strata of society. It comprises men and women, as well as individuals from different age groups, professional backgrounds, and walks of life. This diversity fosters a strong sense of community, mutual respect, and social interaction among members.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mt-4">
+                    Membership is by strict selection, as prospective members are carefully screened to ensure they possess impeccable character, discipline, and high moral integrity. This deliberate process helps to preserve the long-standing ideals, values, etiquette, and global traditions associated with the game of golf.
+                  </p>
+                </div>
+
+                <h4 className="font-serif text-3xl text-golf-green mt-8">The Championship Course</h4>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  The golf course itself is a standard 72-par course, thoughtfully designed to meet international golfing expectations. It boasts a beautiful and refreshing ambience, characterized by lush green vegetation, natural rivers, and serene lakes that enhance both the aesthetics and the playing experience.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  The mildly challenging topography of the course provides an engaging test of skill for both amateur and professional golfers, making every round of play both enjoyable and rewarding. The layout of the course blends seamlessly with the natural landscape, offering breathtaking views and a calming atmosphere that promotes relaxation and focus.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                  <div className="relative h-64 rounded-lg overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop"
+                      alt="Golf Course"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative h-64 rounded-lg overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1599423300746-b62533397364?q=80&w=2070&auto=format&fit=crop"
+                      alt="Club Facilities"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-6 mt-8">
+                  <h4 className="font-serif text-3xl text-golf-green">Safety & Security</h4>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    Beyond the sport, Abeokuta Golf Club places a strong emphasis on the safety and security of its members, guests, and property. Robust security measures are consistently maintained to ensure a safe and secure environment at all times. This commitment to safety further reinforces the club's reputation as a well-managed and member-focused institution.
+                  </p>
+
+                  <h4 className="font-serif text-3xl text-golf-green mt-8">Club House Excellence</h4>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    The Club House is another major highlight of Abeokuta Golf Club. It is well equipped to provide adequate bar and kitchen services, offering a variety of refreshments and meals in a comfortable and welcoming setting. In addition, the clubhouse features ultramodern changing rooms and bathrooms designed to meet the needs and comfort of members and visitors alike.
+                  </p>
+
+                  <div className="bg-golf-green/10 p-8 rounded-lg mt-8">
+                    <h4 className="font-serif text-2xl text-golf-green mb-4">Our Legacy</h4>
+                    <p className="text-lg leading-relaxed text-gray-700">
+                      Overall, Abeokuta Golf Club stands as a symbol of sporting excellence, tradition, and refined leisure, making it a pride of Abeokuta and Ogun State at large.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -185,64 +225,40 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Story Timeline */}
-      <section className="py-24 bg-white overflow-hidden">
+      {/* Vision & Mission */}
+      <section className="py-24 bg-golf-green text-golf-cream">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="section-subtitle">The Journey</h2>
-            <h3 className="section-title">Our Story</h3>
-          </div>
-
-          <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-golf-green/20 hidden md:block" />
-
-            <div className="space-y-24">
-              {timelineEvents.map((event, index) => (
-                <div key={event.year} className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="flex-1"
-                  >
-                    <div className="relative h-80 rounded-lg overflow-hidden shadow-2xl">
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </motion.div>
-
-                  <div className="relative z-10 hidden md:flex items-center justify-center w-12 h-12 bg-golf-gold rounded-full border-4 border-white shadow-lg font-bold text-golf-green">
-                    {index + 1}
-                  </div>
-
-                  <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="flex-1 space-y-4"
-                  >
-                    <span className="text-golf-gold font-bold text-xl">{event.year}</span>
-                    <h4 className="font-serif text-3xl text-golf-green">{event.title}</h4>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                      {event.description}
-                    </p>
-                  </motion.div>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-golf-cream/10 backdrop-blur-sm p-12 rounded-lg border-2 border-golf-gold/30"
+            >
+              <h2 className="section-subtitle !text-golf-gold">Our Vision</h2>
+              <p className="font-serif text-2xl text-golf-cream italic leading-relaxed">
+                &quot;To be the premier golfing destination in Africa, where tradition, nature, and excellence converge to create an unparalleled lifestyle experience.&quot;
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-golf-cream/10 backdrop-blur-sm p-12 rounded-lg border-2 border-golf-green/30"
+            >
+              <h2 className="section-subtitle !text-golf-gold">Our Mission</h2>
+              <p className="font-serif text-2xl text-golf-cream italic leading-relaxed">
+                &quot;To provide our members and guests with a world-class golfing environment, exceptional facilities, and a warm community that honors the traditions of the game.&quot;
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-golf-green text-golf-cream">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="section-subtitle !text-golf-gold">Core Values</h2>
+          <h2 className="section-subtitle">Core Values</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             {[
               { title: "Tradition", desc: "Respecting the heritage of golf." },
@@ -258,13 +274,16 @@ export default function About() {
                 transition={{ delay: index * 0.1 }}
                 className="space-y-2"
               >
-                <h4 className="font-serif text-2xl text-golf-gold">{value.title}</h4>
-                <p className="text-golf-cream/60 text-sm">{value.desc}</p>
+                <h4 className="font-serif text-2xl text-golf-green">{value.title}</h4>
+                <p className="text-gray-600 text-sm">{value.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+    </div>
+  );
+}      </section>
     </div>
   );
 }
