@@ -283,7 +283,4 @@ export default function About() {
       </section>
     </div>
   );
-}      </section>
-    </div>
-  );
 }
