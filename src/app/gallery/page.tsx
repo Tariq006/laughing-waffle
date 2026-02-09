@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { Play, X, Trophy, Calendar, User } from "lucide-react";
+import { Play, X, Trophy, Calendar, User, Instagram, Facebook } from "lucide-react";
 
 const photos = [
   { id: 1, category: "Tournaments", src: "https://images.unsplash.com/photo-1594142465967-360ee07e2a9b?q=80&w=2070&auto=format&fit=crop", title: "Governor's Cup 2024" },
@@ -206,22 +206,66 @@ export default function Gallery() {
         )}
       </AnimatePresence>
 
-      {/* Instagram Feed Style Section */}
+      {/* Social Media Section */}
       <section className="py-24 bg-golf-cream overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="section-subtitle">Follow Our Journey</h2>
-            <h3 className="section-title">@AbeokutaGolfClub</h3>
+            <h3 className="section-title mb-8">Stay Connected</h3>
+            
+            <div className="flex justify-center gap-8 mb-12">
+              <motion.a
+                href="https://instagram.com/abeokutagolfclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col items-center gap-3 group"
+              >
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-500 via-purple-500 to-yellow-500 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Instagram size={36} className="text-white" />
+                </div>
+                <div className="text-center">
+                  <p className="font-bold text-golf-green group-hover:text-golf-green-light transition-colors">Instagram</p>
+                  <p className="text-sm text-gray-600">@AbeokutaGolfClub</p>
+                </div>
+              </motion.a>
+
+              <motion.a
+                href="https://facebook.com/abeokutagolfclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col items-center gap-3 group"
+              >
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Facebook size={36} className="text-white" />
+                </div>
+                <div className="text-center">
+                  <p className="font-bold text-golf-green group-hover:text-golf-green-light transition-colors">Facebook</p>
+                  <p className="text-sm text-gray-600">Abeokuta Golf Club</p>
+                </div>
+              </motion.a>
+            </div>
+
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+              Follow us on social media for the latest updates, event announcements, behind-the-scenes content, and more from our vibrant golfing community.
+            </p>
           </div>
+
           <div className="flex gap-4 overflow-hidden -mx-6 px-6">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="min-w-[250px] aspect-square relative rounded-lg overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
+              <div key={i} className="min-w-[250px] aspect-square relative rounded-lg overflow-hidden opacity-80 hover:opacity-100 transition-opacity group">
                 <Image
                   src={`https://images.unsplash.com/photo-1592910129840-25a162395e02?q=80&w=2070&auto=format&fit=crop&sig=${i}`}
-                  alt="Insta"
+                  alt="Social Media Post"
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Instagram className="text-white" size={32} />
+                </div>
               </div>
             ))}
           </div>
