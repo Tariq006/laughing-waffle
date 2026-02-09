@@ -109,9 +109,6 @@ export default function Home() {
             <Link href="/course" className="btn-gold flex items-center justify-center gap-2">
               Explore the Course <ChevronRight size={20} />
             </Link>
-            <Link href="" className="btn-primary flex items-center justify-center gap-2 bg-transparent border-white hover:bg-white hover:text-golf-green">
-              Membership portal <ArrowRight size={20} />
-            </Link>
           </motion.div>
         </motion.div>
 
@@ -218,4 +215,4 @@ export default function Home() {
       </section>
     </div>
   );
-}
+}}
