@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Tag, ChevronRight, Mail } from "lucide-react";
+import { Calendar, Tag, ChevronRight, Mail, ExternalLink, Download } from "lucide-react";
 
 const articles = [
   {
@@ -50,7 +50,24 @@ const upcomingEvents = [
   { date: "July 15", title: "Junior Golf Academy Starts" },
 ];
 
+// Updated events from the PDF document
+const pdfEvents = [
+  { date: "15 Nov 26", title: "Alake/OANOO Golf Tournament" },
+  { date: "22 Nov 26", title: "Club Kitty - Members and Guests" },
+  { date: "29 Nov 26", title: "Monthly Mug / Nov Celebrants" },
+  { date: "6 Dec 26", title: "Beginners Tournament" },
+  { date: "13 Dec 26", title: "Match Play Finals & Club Championship" },
+  { date: "20 Dec 26", title: "Captain's Cup & End of Year Kitty" },
+  { date: "27 Dec 26", title: "Monthly Mug / Dec Celebrants" },
+];
+
 export default function News() {
+  // If PDF is in public folder
+  const pdfPath = "/2026-AGC-GOLF-TOUR-CALENDAR.pdf";
+  
+  // Alternative approach: If you want to use a relative path (not recommended for Next.js)
+  // const pdfPath = "./2026-AGC-GOLF-TOUR-CALENDAR.pdf";
+
   return (
     <div className="pt-20">
       {/* Page Header */}
@@ -147,9 +164,54 @@ export default function News() {
                     </div>
                   ))}
                 </div>
-                <Link href="/gallery" className="inline-block mt-8 text-sm text-golf-gold hover:underline">
-                  View Full Calendar
-                </Link>
+                
+                {/* PDF Calendar Download Section */}
+                <div className="mt-12 pt-8 border-t border-golf-gold/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Calendar className="text-golf-gold" size={20} />
+                    <h5 className="font-serif text-lg text-golf-cream">Official Tournament Calendar</h5>
+                  </div>
+                  <p className="text-sm text-golf-cream/80 mb-6 leading-relaxed">
+                    View or download the complete 2026 AGC Golf Tour Calendar with all scheduled tournaments and events.
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <a
+                      href={pdfPath}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 w-full bg-golf-green-light hover:bg-golf-green-lighter text-golf-gold py-3 px-6 rounded-lg font-medium transition-colors group"
+                    >
+                      <ExternalLink size={18} />
+                      View Full Calendar PDF
+                    </a>
+                    
+                    <a
+                      href={pdfPath}
+                      download="2026-AGC-Golf-Tour-Calendar.pdf"
+                      className="flex items-center justify-center gap-3 w-full bg-golf-gold hover:bg-golf-gold/80 text-golf-green py-3 px-6 rounded-lg font-medium transition-colors group"
+                    >
+                      <Download size={18} />
+                      Download Calendar
+                    </a>
+                  </div>
+
+                  {/* Quick Preview of PDF Events */}
+                  <div className="mt-10">
+                    <h6 className="text-sm font-bold text-golf-gold uppercase tracking-widest mb-4">Featured Upcoming Events</h6>
+                    <div className="space-y-3">
+                      {pdfEvents.slice(0, 3).map((event) => (
+                        <div key={event.title} className="flex items-start gap-3 text-sm">
+                          <div className="w-2 h-2 mt-2 rounded-full bg-golf-gold flex-shrink-0"></div>
+                          <div>
+                            <p className="text-golf-cream font-medium">{event.title}</p>
+                            <p className="text-golf-gold text-xs">{event.date}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Newsletter */}
