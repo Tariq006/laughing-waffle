@@ -163,11 +163,6 @@ const facilities = [
     description: "Two meticulously maintained practice greens that perfectly mirror the speed and conditions of the course.",
     image: "https://images.unsplash.com/photo-1535918101897-6b6c85b8f0a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
-  {
-    name: "Equipment Rental",
-    description: "High-quality clubs from TaylorMade and Titleist available for rent, along with electric buggies and push trolleys.",
-    image: "https://images.unsplash.com/photo-1598880940080-ff9a29891b85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-  },
 ];
 
 export default function Course() {
@@ -308,7 +303,7 @@ export default function Course() {
             <h3 className="section-title">Course Facilities</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
             {facilities.map((facility, index) => (
               <motion.div
                 key={facility.name}
@@ -324,7 +319,7 @@ export default function Course() {
                     alt={facility.name}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300" />
                 </div>
@@ -341,4 +336,4 @@ export default function Course() {
       </section>
     </div>
   );
-}
+}}
