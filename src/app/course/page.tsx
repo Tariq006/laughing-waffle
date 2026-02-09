@@ -336,4 +336,4 @@ export default function Course() {
       </section>
     </div>
   );
-}}
+} // REMOVED THE EXTRA CLOSING BRACE HERE
